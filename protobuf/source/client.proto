@@ -1,0 +1,36 @@
+syntax = 'proto3';
+
+import "common.proto";
+
+package Client;
+
+option java_package = "com.tealcode.boxingspeed.protobuf";
+option java_outer_classname = "Client";
+
+message ClientMsg {
+    ProtoHead           protoHead       = 1;     // 协议头信息，必须带的
+    Login               login           = 2;     // 登录请求
+    DeviceInfo          DeviceInfo      = 3;     // 设备信息
+}
+
+message ProtoHead {
+    sint32              userId          = 1;
+    sint32              platform        = 2;
+    sint32              timestamp       = 3;
+    string              version         = 4;
+}
+
+message Login {
+    sint32              sequence        = 1;   // 登录消息序号
+    string              deviceId        = 2;   // 设备标志
+}
+
+message DeviceInfo {
+    string              deviceModel     = 1;       // 设备名字
+    string              cpuType         = 2;       // CPU型号
+    sint32              cpuCoreNum      = 3;       // CPU核心数量
+    sint32              cpuFrequency    = 4;       // CPU频率
+    sint32              systemMemory    = 5;       // 系统内存容量
+}
+
+

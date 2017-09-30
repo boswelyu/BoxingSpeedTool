@@ -1,0 +1,12 @@
+syntax = 'proto3';
+
+package Common;
+
+option java_package = "com.tealcode.boxingspeed.protobuf";
+option java_outer_classname = "Common";
+
+enum RESULT
+{
+    RESULT_SUCCESS          =   0;  // 成功
+    RESULT_FAIL             =   1;  // 失败
+}

@@ -1,0 +1,37 @@
+syntax = 'proto3';
+
+import "common.proto";
+
+package Server;
+
+option java_package = "com.tealcode.boxingspeed.protobuf";
+option java_outer_classname = "Server";
+
+message ServerMsg {
+	sint32				serverTime 		= 1;
+	Notification		notification 	= 2;
+
+	LoginReply			loginReply 		= 3;
+}
+
+message Notification {
+	sint32 				newFriends		= 1;
+	sint32 				newMessage		= 2;
+	sint32				newFunction		= 3;
+}
+
+message LoginReply {
+	Common.RESULT	    result  		= 1;  	// 登录状态
+	UserProfile			profile   		= 2;    // 个人信息
+}
+
+message UserProfile {
+	sint32				userId			= 1;
+	sint32				gender			= 2;
+	sint32				age				= 3;
+	sint32				level			= 4;
+	string				username		= 5;
+	string 				nickname		= 6;
+	string				signature		= 7;
+	string 				avatarUrl		= 8;
+}
