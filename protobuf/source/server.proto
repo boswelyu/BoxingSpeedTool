@@ -27,11 +27,12 @@ message LoginReply {
 
 message UserProfile {
 	sint32				userId			= 1;
-	sint32				gender			= 2;
-	sint32				age				= 3;
-	sint32				level			= 4;
-	string				username		= 5;
-	string 				nickname		= 6;
-	string				signature		= 7;
-	string 				avatarUrl		= 8;
+	string				username		= 2;
+	string 				nickname		= 3;
+	sint32				gender			= 4;
+	string              phoneNum        = 5;
+	string				birthDate		= 6;
+	string              location		= 7;
+	string				signature		= 8;
+	string 				avatarUrl		= 9;
 }
